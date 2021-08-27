@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:splitit/modules/login/widgets/social_button.dart';
 import 'package:splitit/theme/app_theme.dart';
 
@@ -56,6 +57,19 @@ class _LoginPageState extends State<LoginPage> {
                 child: SocialButtonWidget(
                   imagePhath: "assets/images/google.png",
                   label: 'Entrar com Google',
+                  onTap: () async {
+                    GoogleSignIn _googleSignIn = GoogleSignIn(
+                      scopes: [
+                        'email',
+                      ],
+                    );
+                    try {
+                      final response = await _googleSignIn.signIn();
+                      print(response);
+                    } catch (error) {
+                      print(error);
+                    }
+                  },
                 ),
               ),
               SizedBox(
@@ -64,8 +78,10 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: SocialButtonWidget(
-                    imagePhath: "assets/images/apple.png",
-                    label: 'Entrar com Apple'),
+                  imagePhath: "assets/images/apple.png",
+                  label: 'Entrar com Apple',
+                  onTap: () {},
+                ),
               ),
             ],
           ),
