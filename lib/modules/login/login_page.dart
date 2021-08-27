@@ -56,6 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: SocialButtonWidget(
                   imagePhath: "assets/images/google.png",
                   label: 'Entrar com Google',
+                  onTap: () {},
                 ),
               ),
               SizedBox(
@@ -64,8 +65,10 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: SocialButtonWidget(
-                    imagePhath: "assets/images/apple.png",
-                    label: 'Entrar com Apple'),
+                  imagePhath: "assets/images/apple.png",
+                  label: 'Entrar com Apple',
+                  onTap: () {},
+                ),
               ),
             ],
           ),
