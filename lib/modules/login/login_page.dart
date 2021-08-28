@@ -75,14 +75,31 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 12,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
-                child: SocialButtonWidget(
-                  imagePhath: "assets/images/apple.png",
-                  label: 'Entrar com Apple',
-                  onTap: () {},
-                ),
-              ),
+              //TODO: Precisa terminar a configuração Apple.
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 32),
+              //   child: SocialButtonWidget(
+              //     imagePhath: "assets/images/apple.png",
+              //     label: 'Entrar com Apple',
+              //     onTap: () async {
+              //       try {
+              //         final credential =
+              //             await SignInWithApple.getAppleIDCredential(
+              //           scopes: [
+              //             AppleIDAuthorizationScopes.email,
+              //             AppleIDAuthorizationScopes.fullName,
+              //           ],
+              //         );
+              //         print(credential);
+
+              //         // Now send the credential (especially `credential.authorizationCode`) to your server to create a session
+              //         // after they have been validated with Apple (see `Integration` section for more information on how to do this)
+              //       } catch (e) {
+              //         print(e);
+              //       }
+              //     },
+              //   ),
+              // ),
             ],
           ),
         ],
