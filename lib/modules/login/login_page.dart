@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:splitit/modules/login/login_controller.dart';
+import 'package:splitit/modules/login/login_state.dart';
 import 'package:splitit/modules/login/widgets/social_button.dart';
 import 'package:splitit/theme/app_theme.dart';
 
@@ -11,7 +12,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final controller = LoginController();
+  late LoginController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = LoginController(onUpdate: () => setState(() {}));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,16 +61,21 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 32,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
-                child: SocialButtonWidget(
-                  imagePhath: "assets/images/google.png",
-                  label: 'Entrar com Google',
-                  onTap: () {
-                    controller.googleSignIn();
-                  },
+              if (controller.state is LoginStateLoading) ...[
+                CircularProgressIndicator(),
+              ] else if (controller.state is LoginStateFailure) ...[
+                Text((controller.state as LoginStateFailure).message)
+              ] else
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  child: SocialButtonWidget(
+                    imagePhath: "assets/images/google.png",
+                    label: 'Entrar com Google',
+                    onTap: () {
+                      controller.googleSignIn();
+                    },
+                  ),
                 ),
-              ),
               SizedBox(
                 height: 12,
               ),
