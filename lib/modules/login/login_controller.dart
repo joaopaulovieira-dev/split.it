@@ -20,7 +20,6 @@ class LoginController {
       state = LoginStateSuccess(user: user!);
       print(state);
     } catch (error) {
-      //mostrar a mensagem de erro
       state = LoginStateFailure(message: error.toString());
       print(state);
     }

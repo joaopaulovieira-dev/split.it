@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "931951361532-cicm6mobqhp83cdpfqg7h62drfngb3nm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.joaopaulovieira.splitit",
+            "certificate_hash": "e2753c8dd23b6a76573e66ff8b93ef4cb704f085"
+          }
+        },
+        {
           "client_id": "931951361532-c4r7svtmfbjfh3u63c9k2ocqov7ambud.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "931951361532-c4r7svtmfbjfh3u63c9k2ocqov7ambud.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "931951361532-cmnnm7duhalretf82ag2paogpkl6cfp9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.joaopaulovieira.splitit"
+              }
             }
           ]
         }
