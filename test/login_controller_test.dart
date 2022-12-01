@@ -23,10 +23,23 @@ void main() {
     );
   });
 
-  test('Testando o Google SingIn retornando sucesso.', () {
+  test('Testando o Google SingIn retornando sucesso.', () async {
     expect(controller.state, isInstanceOf<LoginStateEmpty>());
-    controller.googleSignIn();
-    expect(controller.state, isInstanceOf<LoginStateLoading>());
-    expect(controller.state, isInstanceOf<LoginStateSuccess>());
+    final states = <LoginState>[];
+    controller.listen((state) => states.add(state));
+    await controller.googleSignIn();
+    expect(states[0], isInstanceOf<LoginStateLoading>());
+    expect(states[1], isInstanceOf<LoginStateSuccess>());
+    expect(states.length, 2);
+  });
+
+  test('Testando o Google SingIn retornando failure.', () async {
+    expect(controller.state, isInstanceOf<LoginStateEmpty>());
+    final states = <LoginState>[];
+    controller.listen((state) => states.add(state));
+    await controller.googleSignIn();
+    expect(states[0], isInstanceOf<LoginStateLoading>());
+    expect(states[1], isInstanceOf<LoginStateFailure>());
+    expect(states.length, 2);
   });
 }
