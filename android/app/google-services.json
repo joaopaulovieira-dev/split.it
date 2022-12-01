@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "931951361532-cicm6mobqhp83cdpfqg7h62drfngb3nm.apps.googleusercontent.com",
+          "client_id": "931951361532-j6vceiheiq2jfocta196qgbomu86qmmg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "dev.joaopaulovieira.splitit",
-            "certificate_hash": "e2753c8dd23b6a76573e66ff8b93ef4cb704f085"
+            "certificate_hash": "a987b6ab3dadd7387a6372d0b33e6925035c0b31"
           }
         },
         {
